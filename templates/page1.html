@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Private Page</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+<div class="container">
+    <div class="box">
+        <h1>Welcome {{ username }}</h1>
+        <p>This is your private family page.</p>
+        <a class="logout-btn" href="/logout">Logout</a>
+    </div>
+</div>
+</body>
+</html>

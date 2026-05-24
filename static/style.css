@@ -49,3 +49,18 @@ button {
     padding: 15px;
     margin-top: 15px;
 }
+
+.home-text {
+    text-align: center;
+    color: #555;
+    margin-top: 15px;
+    line-height: 1.6;
+}
+
+.home-buttons {
+    margin-top: 25px;
+}
+
+.register-btn {
+    background: #10b981;
+}

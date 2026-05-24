@@ -1,35 +1,131 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Family Website</title>
-    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+
+    <link rel="stylesheet"
+    href="{{ url_for('static', filename='style.css') }}">
+
 </head>
 <body>
 
-<div class="container">
-    <div class="box">
+<div class="background-glow"></div>
 
-        <h1>Welcome To Our Family Website</h1>
+<div class="main-container">
 
-        <p class="home-text">
-            A private place for our family memories,
-            updates, and connections.
+    <!-- LEFT SIDE -->
+    <div class="hero-section">
+
+        <h1 class="logo">
+            Family Website
+        </h1>
+
+        <p class="subtitle">
+            A private digital home for love,
+            memories, peace, and connection.
         </p>
 
-        <div class="home-buttons">
-            <a href="/login">
-                <button>Login</button>
-            </a>
+        <!-- MESSAGE CARD -->
+        <div class="message-card">
 
-            <a href="/register">
-                <button class="register-btn">
-                    Register
-                </button>
-            </a>
+            <p id="rotating-text">
+                I just want to take a moment to tell you how much you mean to me...
+            </p>
+
+        </div>
+
+        <!-- EXTRA INFO -->
+        <div class="info-grid">
+
+            <div class="info-card">
+                ❤️ Family First
+            </div>
+
+            <div class="info-card">
+                🔒 Private Space
+            </div>
+
+            <div class="info-card">
+                🌍 Connected Forever
+            </div>
+
+            <div class="info-card">
+                ✨ Love & Memories
+            </div>
+
         </div>
 
     </div>
+
+    <!-- RIGHT SIDE -->
+    <div class="login-section">
+
+        <div class="login-box">
+
+            <h2>Member Login</h2>
+
+            <form action="/login" method="POST">
+
+                <input type="text"
+                name="username"
+                placeholder="Username"
+                required>
+
+                <input type="password"
+                name="password"
+                placeholder="Password"
+                required>
+
+                <button type="submit">
+                    Login
+                </button>
+
+            </form>
+
+            <a href="/register" class="register-link">
+                Create Account
+            </a>
+
+        </div>
+
+    </div>
+
 </div>
+
+<script>
+
+const messages = [
+
+`I just want to take a moment to tell you how much you mean to me. No matter where life takes us or how busy things become, my heart will always be connected to this family. Your love, support, advice, laughter, and even the little moments we share are some of the greatest blessings in my life.`,
+
+`Thank you for always being there for me through the good days and the difficult ones. Knowing I have a family that cares gives me strength and confidence every day. I may not say it often, but I truly appreciate every sacrifice, every prayer, and every act of love you have shown me.`,
+
+`Home is not just a place — it is the feeling I get whenever I think about all of you. You are my comfort, my motivation, and my greatest treasure. I pray that happiness, peace, good health, and success continue to fill our home and our lives.`,
+
+`No matter what happens, I will always love and cherish this family with all my heart. With love.`
+
+];
+
+let index = 0;
+
+const textElement = document.getElementById('rotating-text');
+
+setInterval(() => {
+
+    index = (index + 1) % messages.length;
+
+    textElement.style.opacity = 0;
+
+    setTimeout(() => {
+        textElement.innerText = messages[index];
+        textElement.style.opacity = 1;
+    }, 500);
+
+}, 4000);
+
+</script>
 
 </body>
 </html>

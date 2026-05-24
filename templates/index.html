@@ -1,1 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Family Website</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
 
+<div class="container">
+    <div class="box">
+
+        <h1>Welcome To Our Family Website</h1>
+
+        <p class="home-text">
+            A private place for our family memories,
+            updates, and connections.
+        </p>
+
+        <div class="home-buttons">
+            <a href="/login">
+                <button>Login</button>
+            </a>
+
+            <a href="/register">
+                <button class="register-btn">
+                    Register
+                </button>
+            </a>
+        </div>
+
+    </div>
+</div>
+
+</body>
+</html>

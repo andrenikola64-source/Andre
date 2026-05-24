@@ -33,7 +33,7 @@ with app.app_context():
 # HOME
 @app.route('/')
 def home():
-    return redirect(url_for('login'))
+    return render_template('index.html')
 
 
 # REGISTER
